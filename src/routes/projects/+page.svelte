@@ -5,18 +5,27 @@
 
 <script>
     import projects from '$lib/projects.json';
+	import Pie from '$lib/Pie.svelte';
 </script>
+
+
+<Pie />
+
 
 <div class="project-container">
 {#each projects as p}
 
 	<article class="projects">
-		<h2>{p.title}</h2>
+		<h2 class='titles'>{p.title}</h2>
 		<img src={p.image} alt="">
-		<p>{p.description}</p>
+		<div>
+			<p>{p.description}</p>
+			<p class='dates'>{p.year}</p>
+		</div>
 	</article>
 
 
 {/each}
 
 </div>	
+
